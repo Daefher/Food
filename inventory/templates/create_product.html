@@ -1,0 +1,61 @@
+{% extends 'base_layout.html' %}
+{% load crispy_forms_tags  %}
+{% block content%}
+<!-- contact -->
+  <section id="contact" class="section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1 class="header-h">Agregar Producto</h1>
+          <p class="header-p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+            <br>nibh euismod tincidunt ut laoreet dolore magna aliquam. </p>
+        </div>
+      </div>
+      <div class="row msg-row">        
+        <div class="col-md-8 col-sm-8">
+          <form action="." method="post" role="form" class="">
+           {% csrf_token %}
+            <div class="col-md-6 col-sm-6">
+              <div class="form-group label-floating is-empty">
+                {{ form.nombre | as_crispy_field }}
+              </div>
+
+            </div>
+            <div class="col-md-6 col-sm-6 ">
+              <div class="form-group">
+               {{ form.cantidad | as_crispy_field }}
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 ">
+              <div class="form-group">
+                {{ form.slug | as_crispy_field}}
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="form-group">
+                {{ form.categoria | as_crispy_field}}
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 ">
+              <div class="form-group">
+               {{ form.fecha_creacion | as_crispy_field}}
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 ">
+              <div class="form-group">
+                {{ form.user | as_crispy_field }}
+              </div>
+            </div>            
+            <div class="col-md-12 btnpad">
+              <div class="contacts-btn-pad">
+                <button type='submit' class="contacts-btn">Guardar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- / contact -->
+
+  {% endblock%}
